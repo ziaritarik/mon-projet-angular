@@ -15,7 +15,7 @@ export class AppComponent {
         setTimeout(
           ()=>{
             resolve(date);
-          },4000)
+          },2000)
     }
   );
   appareils=[
