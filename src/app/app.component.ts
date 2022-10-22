@@ -1,52 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppareilService } from './services/appareil.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-  isAuth=false;
-  lasteDate =new Date();
-  lasteUpdate =new Promise(
-    (resolve,reject)=>{
-        const date=new Date();
-        setTimeout(
-          ()=>{
-            resolve(date);
-          },2000)
-    }
-  );
-  appareils=[
-    {
-      name:'Machine à laver',
-      status:'éteint'
-    },
-    {
-      name:'Télévision',
-      status:'allumé'
-    },
-    {
-      name:'Ordinateur',
-      status:'allumé'
-    }
+  constructor() { }
 
-  ]
-
-appareilOne="Machine à laver";
-appareilTwo="Télévision";
-appareilThree="Ordinateur";
-  constructor(){
-    setTimeout(
-      ()=>{this.isAuth=true;
-      },4000);
+  ngOnInit(): void {
   }
-
   
-  
-  onAllumer(){
-    //console.log("on allume tout");
-  }
-
 }
