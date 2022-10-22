@@ -1,9 +1,8 @@
-<div class="container">
-    <div class="row">
+
         <div class="col-xs-12">
+            <H2>Mes appareils</H2>
             <p>Mise à jour  : {{lasteDate|date:'yMMMEEEd'|uppercase}}</p>
             <p>Mise à jour  : {{lasteUpdate|async|date|uppercase}}</p>
-            <H2>Mes appareils</H2>
             <ul class="list-group">
                 <app-appareil  *ngFor="let appareil of appareils; let i =index"
                 [indexOfappareil]="i"
@@ -15,6 +14,5 @@
             <button class="btn btn-success" (click)="onAllumer()" >Toutallumer</button>
             <button class="btn btn-danger" (click)="ofEteindre()">éteindre</button>
         </div>
-    </div>
-</div>
+
 
