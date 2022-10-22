@@ -7,11 +7,16 @@ import { AppareilComponent } from './appareil/appareil.component';
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { RouterModule,Routes } from '@angular/router';
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 const appRoues : Routes=[
   {path : '',component:AppareilViewComponent},
   {path : 'auth',component:AuthComponent},
-  {path : 'appareilView',component:AppareilViewComponent }
+  {path : 'appareilView',component:AppareilViewComponent },
+  {path : 'appareilView/:id',component:SingleAppareilComponent},
+  {path : 'not-found',component:FourOhFourComponent},
+  {path : '**',redirectTo:'/not-found'}
 ];
 
 
@@ -20,7 +25,9 @@ const appRoues : Routes=[
     AppComponent,
     AppareilComponent,
     AuthComponent,
-    AppareilViewComponent
+    AppareilViewComponent,
+    SingleAppareilComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,

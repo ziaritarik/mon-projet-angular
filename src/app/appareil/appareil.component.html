@@ -4,5 +4,8 @@
   
     <h4 [ngStyle]="{color:getColor()}">Id : {{id}} --Appareil :{{appareilName}} ---Status :{{ gitStatus() }}</h4>
         <button class="btn btn-success" (click)="onswitchOn()" [disabled]="appareilStatus === 'allumé'">allumer</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn btn-danger" (click)="onswitchOf()" [disabled]="appareilStatus === 'éteint'" >éteindre</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-success" [routerLink]="id">détaillé</button>
 </li>

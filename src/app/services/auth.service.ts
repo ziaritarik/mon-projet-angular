@@ -11,7 +11,7 @@ export class AuthService {
 
    }
 
-   siginIn(){
+   signIn(){
     return new Promise(
       (resolve,reject)=>{
         setTimeout(
@@ -22,5 +22,9 @@ export class AuthService {
       }
   )
    }
+   signOut(){ 
+    this.isAuth=false;
+   }
+
 
 }
