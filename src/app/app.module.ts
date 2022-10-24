@@ -17,6 +17,7 @@ const appRoues : Routes=[
   {path : 'auth',component:AuthComponent},
   {path : 'appareilView',canActivate:[AuthGuardService],component:AppareilViewComponent },
   {path : 'appareilView/:id',canActivate:[AuthGuardService],component:SingleAppareilComponent},
+  {path : 'edit' ,canActivate:[AuthGuardService],component:EditAppareilComponent},
   {path : 'not-found',canActivate:[AuthGuardService],component:FourOhFourComponent},
   {path : '**',redirectTo:'/not-found'}
 ];
