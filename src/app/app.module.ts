@@ -22,7 +22,7 @@ const appRoues : Routes=[
   {path : 'appareilView/:id',canActivate:[AuthGuardService],component:SingleAppareilComponent},
   {path : 'edit' ,canActivate:[AuthGuardService],component:EditAppareilComponent},
   {path : 'users' ,canActivate:[AuthGuardService],component:UserListComponent},
-  {path : 'newUser' ,canActivate:[AuthGuardService],component:NewUserComponent},
+  {path : 'newUser',canActivate:[AuthGuardService],component:NewUserComponent},
   {path : 'not-found',canActivate:[AuthGuardService],component:FourOhFourComponent},
   {path : '**',redirectTo:'/not-found'}
 ];
