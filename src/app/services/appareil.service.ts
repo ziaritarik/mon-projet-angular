@@ -6,9 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class AppareilService {
   appareilSubject =new Subject<any[]>();
-  constructor() { }
-
-  
+  constructor() { }  
  private appareils=[
     {
       id:1,

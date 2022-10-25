@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppareilComponent } from './appareil/appareil.component';
@@ -11,6 +11,9 @@ import { SingleAppareilComponent } from './single-appareil/single-appareil.compo
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserService } from './services/user.service';
+import { NewUserComponent } from './new-user/new-user.component';
 
 const appRoues : Routes=[
   {path : '',canActivate:[AuthGuardService],component:AppareilViewComponent},
@@ -18,6 +21,8 @@ const appRoues : Routes=[
   {path : 'appareilView',canActivate:[AuthGuardService],component:AppareilViewComponent },
   {path : 'appareilView/:id',canActivate:[AuthGuardService],component:SingleAppareilComponent},
   {path : 'edit' ,canActivate:[AuthGuardService],component:EditAppareilComponent},
+  {path : 'users' ,canActivate:[AuthGuardService],component:UserListComponent},
+  {path : 'newUser' ,canActivate:[AuthGuardService],component:NewUserComponent},
   {path : 'not-found',canActivate:[AuthGuardService],component:FourOhFourComponent},
   {path : '**',redirectTo:'/not-found'}
 ];
@@ -31,14 +36,17 @@ const appRoues : Routes=[
     AppareilViewComponent,
     SingleAppareilComponent,
     FourOhFourComponent,
-    EditAppareilComponent
+    EditAppareilComponent,
+    UserListComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoues),
   ],
-  providers: [],
+  providers: [UserService],
 
   bootstrap: [AppComponent]
 })

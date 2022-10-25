@@ -7,7 +7,7 @@ export class User {
     this.lastName=lastName;
   }*/
   //méthode plus facile
-  constructor(public fisrtName:string,
+  constructor(public firstName:string,
               public lastName:string,
               public email:string,
               public drinkPrefance:string,
