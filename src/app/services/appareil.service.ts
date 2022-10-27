@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 //test de git pour récupérer dernier version
 @Injectable({
   providedIn: 'root'
 })
 export class AppareilService {
   appareilSubject =new Subject<any[]>();
-  constructor() { }  
+  constructor(private httpClient:HttpClient) { }  
  private appareils=[
     {
       id:1,
@@ -78,4 +79,5 @@ export class AppareilService {
     this.appareils.push(appareilObject);
     this.emitAppareilSubject();
   }
+  
 }
