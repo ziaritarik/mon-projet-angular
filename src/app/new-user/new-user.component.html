@@ -19,6 +19,13 @@
                 <option value="the">the</option>
             </select>
          </div>
+         <div formArrayName="hobbies">
+            <h3>vos hobbies</h3>
+            <div class="form-group" *ngFor="let hobbyControl of gethobbies().controls,let i =index">
+                <input type="text" class="form-control" [formControlName]="i">
+            </div>
+            <button type="button" class="btn btn-success" (click)="onAddhobby()">Ajout hobbies</button>
+         </div>
          <button class="btn btn-primary" type="Submit" [disabled]="userform.invalid">Soumetre</button>
     </form>
 </div>
